@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Alice Blue */
+    color: #333;
+}
+
+/* Header */
+h1, h2, h3 {
+    color: #1e3a8a; /* Navy Blue */
+    text-align: center;
+}
+
+/* Buttons */
+.button-container a {
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px;
+    color: #ffffff;
+    background-color: #3b82f6; /* Blue */
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-container a:hover {
+    background-color: #1e40af; /* Dark Blue */
+    transform: scale(1.05);
+}
+
+/* Links */
+a {
+    color: #2563eb; /* Medium Blue */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #1e3a8a; /* Navy Blue */
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0f2fe; /* Light Blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1e3a8a; /* Navy Blue */
+    color: #ffffff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #3b82f6; /* Blue */
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #1e40af; /* Dark Blue */
+}
+
+/* Submit Button */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2563eb; /* Medium Blue */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1e3a8a; /* Navy Blue */
+    transform: scale(1.05);
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/entrevistas.css">
+    <title>Registrar Infraestructura</title>
+</head>
+<body>
+    <h1>Registrar Infraestructura</h1>
+    
+    <!-- Formulario Entrevista Infraestructura -->
+    <div class="form-container">
+        <h2>Entrevista Infraestructura</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="agua_potable">¿La escuela cuenta con acceso a agua potable en todas sus instalaciones?</label>
+                <select id="agua_potable" name="agua_potable" required>
+                    <option value="si">Sí</option>
+                    <option value="intermitente">Intermitente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="servicios_sanitarios">¿Existen servicios sanitarios adecuados y en buen estado para todos los estudiantes y el personal?</label>
+                <select id="servicios_sanitarios" name="servicios_sanitarios" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="electricidad">¿La escuela tiene acceso a electricidad en todas las áreas donde se imparten clases?</label>
+                <select id="electricidad" name="electricidad" required>
+                    <option value="si">Sí</option>
+                    <option value="intermitente">Intermitente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mobiliario">¿Las aulas están equipadas con mobiliario adecuado y suficiente para los estudiantes?</label>
+                <select id="mobiliario" name="mobiliario" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="internet">¿La escuela cuenta con acceso a Internet en todas las áreas donde se realiza el aprendizaje?</label>
+                <select id="internet" name="internet" required>
+                    <option value="si">Sí</option>
+                    <option value="solo_maestros">Solo maestros</option>
+                    <option value="solo_laboratorios">Solo laboratorios</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="espacios_extra">¿Existen espacios adecuados para actividades extracurriculares (como deportes o arte)?</label>
+                <select id="espacios_extra" name="espacios_extra" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="seguridad">¿La infraestructura escolar cuenta con medidas de seguridad, como salidas de emergencia, extintores y alarmas?</label>
+                <select id="seguridad" name="seguridad" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="acceso_discapacidad">¿Los pasillos, escaleras y entradas son accesibles para personas con discapacidad?</label>
+                <select id="acceso_discapacidad" name="acceso_discapacidad" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ventilacion">¿La escuela tiene un sistema adecuado de ventilación y calefacción en todas sus áreas?</label>
+                <select id="ventilacion" name="ventilacion" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estado_edificio">¿El edificio de la escuela se encuentra en buen estado de conservación, sin grietas, filtraciones o daños estructurales?</label>
+                <select id="estado_edificio" name="estado_edificio" required>
+                    <option value="si">Sí</option>
+                    <option value="parcialmente">Parcialmente</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <button type="submit">Enviar Entrevista</button>
+        </form>
+    </div>
+
+    <!-- Botones de navegación -->
+    <div class="button-container">
+        <a href="escuela.html">Regresar</a>
+    </div>
+</body>
+</html>

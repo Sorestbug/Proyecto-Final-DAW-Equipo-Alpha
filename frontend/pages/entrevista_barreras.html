@@ -3,43 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/entrevistas.css">
     <title>Entrevista Barreras</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            margin-top: 50px;
-            color: #333;
-        }
-        .button-container {
-            margin-top: 30px;
-        }
-        .button-container a {
-            text-decoration: none;
-            padding: 15px 30px;
-            margin: 10px;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-            font-size: 16px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        .button-container a:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <h1>Entrevista Barreras</h1>
+    
+    <!-- Formulario Entrevista Barreras -->
+    <div class="form-container">
+        <h2>Cuestionario de Barreras</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="infraestructura_basica">¿Su hogar cuenta con la infraestructura básica necesaria para el bienestar del estudiante (agua potable, electricidad, acceso a servicios básicos)?</label>
+                <select id="infraestructura_basica" name="infraestructura_basica" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="intermitente">Intermitente</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="barreras_economicas">¿Existen barreras económicas en su hogar que dificulten el acceso del estudiante a recursos educativos o a la asistencia escolar (materiales, uniforme, transporte, etc.)?</label>
+                <select id="barreras_economicas" name="barreras_economicas" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a_veces">A veces</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="acceso_recursos">¿El estudiante tiene acceso a los medios necesarios para estudiar (libros, computadora, acceso a Internet, material de estudio)?</label>
+                <select id="acceso_recursos" name="acceso_recursos" required>
+                    <option value="si">Sí</option>
+                    <option value="le_falta">Le falta alguno de estos recursos</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alimentacion">¿El estudiante recibe una alimentación adecuada y nutritiva que le permita mantener su salud y concentración durante sus estudios?</label>
+                <select id="alimentacion" name="alimentacion" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="intermitente">Intermitente</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="entorno_familiar">¿El entorno familiar y el hogar del estudiante son seguros, sin situaciones de violencia, conflictos graves o inseguridad que puedan afectarlo emocionalmente?</label>
+                <select id="entorno_familiar" name="entorno_familiar" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a_veces">A veces</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="grado_aspirado">¿Cuál es el máximo grado académico que el estudiante aspira a alcanzar?</label>
+                <select id="grado_aspirado" name="grado_aspirado" required>
+                    <option value="secundaria">Secundaria</option>
+                    <option value="preparatoria">Preparatoria</option>
+                    <option value="universidad">Universidad</option>
+                    <option value="posgrado">Posgrado (Maestría/Doctorado)</option>
+                    <option value="no_claro">No tiene claro su futuro académico</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="problemas_salud">¿El estudiante tiene algún problema de salud o condición física (enfermedad, discapacidad) que pueda ser una barrera para su rendimiento académico?</label>
+                <select id="problemas_salud" name="problemas_salud" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="no_seguro">No estoy seguro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="barreras_emocionales">¿Existen barreras emocionales o psicológicas (estrés, ansiedad, problemas familiares) que dificulten la concentración o el bienestar emocional del estudiante?</label>
+                <select id="barreras_emocionales" name="barreras_emocionales" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a_veces">A veces</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="transporte">¿El estudiante cuenta con los medios de transporte necesarios para asistir a la escuela de manera regular y segura?</label>
+                <select id="transporte" name="transporte" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a_veces">A veces</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tiempo_recreativo">¿El estudiante dispone de tiempo suficiente para actividades recreativas o de esparcimiento que contribuyan a su bienestar y equilibrio emocional?</label>
+                <select id="tiempo_recreativo" name="tiempo_recreativo" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="a_veces">A veces</option>
+                </select>
+            </div>
+            <button type="submit">Enviar Entrevista</button>
+        </form>
+    </div>
+
+    <!-- Botones de navegación -->
     <div class="button-container">
-        <a href="escuela.html">Regresar</a>
-        <a href="escuela.html">Enviar</a>
+        <a href="escuela.html" class="button blue">Regresar</a>
     </div>
 </body>
 </html>

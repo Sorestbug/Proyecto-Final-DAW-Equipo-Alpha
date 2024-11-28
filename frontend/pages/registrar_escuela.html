@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/entrevistas.css">
     <title>Registrar Escuela</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            margin-top: 50px;
-            color: #333;
-        }
-        .button-container {
-            margin-top: 30px;
-        }
-        .button-container a {
-            text-decoration: none;
-            padding: 15px 30px;
-            margin: 10px;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-            font-size: 16px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        .button-container a:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <h1>Registrar Escuela</h1>
+    
+    <!-- Formulario Registrar Escuela -->
+    <div class="form-container">
+        <h2>Formulario de Registro de Escuela</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nombre_escuela">Nombre de la Escuela:</label>
+                <input type="text" id="nombre_escuela" name="nombre_escuela" maxlength="50" required>
+            </div>
+            <div class="form-group">
+                <label for="municipio">Municipio:</label>
+                <input type="text" id="municipio" name="municipio" value="Puebla" maxlength="25" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" maxlength="150" required>
+            </div>
+            <div class="form-group">
+                <label for="num_maestros">¿Cuántos maestros tiene la institución?</label>
+                <input type="number" id="num_maestros" name="num_maestros" max="999" required>
+            </div>
+            <div class="form-group">
+                <label for="num_alumnos">¿Cuántos alumnos hay matriculados?</label>
+                <input type="number" id="num_alumnos" name="num_alumnos" max="9999" required>
+            </div>
+            <button type="submit">Registrar Escuela</button>
+        </form>
+    </div>
+
+    <!-- Botones de navegación -->
     <div class="button-container">
         <a href="menu_entrevistador.html">Regresar al Menú</a>
-        <a href="escuela.html">Registrar Escuela</a>
     </div>
 </body>
 </html>

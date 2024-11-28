@@ -3,43 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./../css/entrevistas.css">
     <title>Entrevista Rezago</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-        }
-        h1 {
-            margin-top: 50px;
-            color: #333;
-        }
-        .button-container {
-            margin-top: 30px;
-        }
-        .button-container a {
-            text-decoration: none;
-            padding: 15px 30px;
-            margin: 10px;
-            color: white;
-            background-color: #007BFF;
-            border-radius: 5px;
-            font-size: 16px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-        .button-container a:hover {
-            background-color: #0056b3;
-        }
-    </style>
 </head>
 <body>
     <h1>Entrevista Rezago</h1>
+    
+    <!-- Formulario Entrevista Rezago -->
+    <div class="form-container">
+        <h2>Cuestionario de Rezago Académico</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="nivel_academico">¿Cuál es el nivel académico del profesor que imparte este curso?</label>
+                <select id="nivel_academico" name="nivel_academico" required>
+                    <option value="sin_estudios">Sin estudios</option>
+                    <option value="primaria">Primaria</option>
+                    <option value="secundaria">Secundaria</option>
+                    <option value="preparatoria">Preparatoria</option>
+                    <option value="licenciatura">Licenciatura</option>
+                    <option value="maestria">Maestría</option>
+                    <option value="doctorado">Doctorado</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="grado_curso">¿En qué grado se encuentra el curso que estás impartiendo?</label>
+                <input type="number" id="grado_curso" name="grado_curso" min="1" max="6" required>
+            </div>
+            <div class="form-group">
+                <label for="turno">¿Cuál es el turno en el que se imparte este curso?</label>
+                <select id="turno" name="turno" required>
+                    <option value="matutino">Matutino</option>
+                    <option value="vespertino">Vespertino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="num_alumnos">¿Cuántos alumnos están matriculados en este curso?</label>
+                <input type="number" id="num_alumnos" name="num_alumnos" min="1" max="999" required>
+            </div>
+            <div class="form-group">
+                <label for="habilidades_lectura">¿Qué porcentaje de los alumnos tienen habilidades de lectura adecuadas para su curso?</label>
+                <input type="number" id="habilidades_lectura" name="habilidades_lectura" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="habilidades_matematicas">¿Qué porcentaje de los alumnos tienen habilidades matemáticas adecuadas para su curso?</label>
+                <input type="number" id="habilidades_matematicas" name="habilidades_matematicas" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="conocimientos_adecuados">¿Qué porcentaje de los alumnos tienen los conocimientos adecuados para su curso?</label>
+                <input type="number" id="conocimientos_adecuados" name="conocimientos_adecuados" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="rendimiento_por_bajo">¿Qué porcentaje de los alumnos muestran un rendimiento académico por debajo de lo esperado en este curso?</label>
+                <input type="number" id="rendimiento_por_bajo" name="rendimiento_por_bajo" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="metodo_ensenanza">¿Cuál es el método de enseñanza principal utilizado en este curso?</label>
+                <select id="metodo_ensenanza" name="metodo_ensenanza" required>
+                    <option value="exposicion">Exposición del profesor</option>
+                    <option value="aprendizaje_proyectos">Aprendizaje basado en proyectos</option>
+                    <option value="aprendizaje_colaborativo">Aprendizaje colaborativo</option>
+                    <option value="estudio_independiente">Estudio independiente</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="recursos_didacticos">¿Existen recursos o materiales didácticos suficientes para apoyar el aprendizaje de los estudiantes en este curso?</label>
+                <select id="recursos_didacticos" name="recursos_didacticos" required>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                    <option value="parcialmente">Parcialmente</option>
+                </select>
+            </div>
+            <button type="submit">Enviar Entrevista</button>
+        </form>
+    </div>
+
+    <!-- Botones de navegación -->
     <div class="button-container">
-        <a href="escuela.html">Regresar</a>
-        <a href="escuela.html">Enviar</a>
+        <a href="escuela.html" class="button blue">Regresar</a>
     </div>
 </body>
 </html>

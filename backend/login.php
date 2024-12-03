@@ -1,6 +1,6 @@
 <?php
 // Incluir archivo de conexión a la base de datos
-include 'conexion.php';  // Asegúrate de que 'conexion.php' esté configurado correctamente
+include 'conexion.php';
 
 // Comprobar si el formulario fue enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -19,17 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "SELECT id_usuario, contraseña FROM usuarios WHERE correo = :correo";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([':correo' => $correo]);
-        $usuario = $stmt->fetch();
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
         // Verificar si se encontró el usuario
-        if ($usuario && password_verify($contraseña, $usuario['contraseña'])) {
-            // Si la contraseña es correcta, redirigir al menú del entrevistador
-            session_start();
-            $_SESSION['usuario_id'] = $usuario['id_usuario'];
-            header("Location: menu_entrevistador.html");
-            exit;
+        if ($usuario) {
+            if (password_verify($contraseña, $usuario['contraseña'])) {
+                // Contraseña correcta
+                session_start();
+                $_SESSION['usuario_id'] = $usuario['id_usuario'];
+                header("Location: ../frontend/pages/menu_entrevistador.html");
+                exit;
+            } else {
+                // Contraseña incorrecta
+                echo "Correo o contraseña incorrectos.";
+            }
         } else {
-            echo "Correo o contraseña incorrectos.";
+            // Usuario no encontrado
+            echo "El usuario no existe.";
         }
     } catch (PDOException $e) {
         echo "Error en la conexión o la consulta: " . $e->getMessage();

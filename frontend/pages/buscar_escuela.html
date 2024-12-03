@@ -5,12 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../css/styles.css">
     <title>Buscar Escuela</title>
+    <script>
+        async function buscarEscuela() {
+            const query = document.getElementById('search-bar').value;
+
+            if (!query) {
+                alert('Por favor, ingresa un término de búsqueda.');
+                return;
+            }
+
+            try {
+                // Realizar una solicitud al backend
+                const response = await fetch(`../../backend/buscar.php?query=${encodeURIComponent(query)}`);
+
+                if (!response.ok) {
+                    throw new Error('Error en la solicitud al servidor');
+                }
+
+                const escuelas = await response.json();
+
+                // Limpiar resultados previos
+                const resultados = document.getElementById('resultados');
+                resultados.innerHTML = '';
+
+                if (escuelas.length > 0) {
+                    // Mostrar resultados
+                    escuelas.forEach(escuela => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                            <td>${escuela.id_escuela}</td>
+                            <td>${escuela.nombre}</td>
+                            <td>${escuela.municipio}</td>
+                            <td>${escuela.direccion}</td>
+                            <td>
+                                <button onclick="irAEntrevista(${escuela.id_escuela})">Seleccionar</button>
+                            </td>
+                        `;
+                        resultados.appendChild(row);
+                    });
+                } else {
+                    resultados.innerHTML = '<tr><td colspan="5">No se encontraron resultados.</td></tr>';
+                }
+            } catch (error) {
+                console.error('Error en la búsqueda:', error);
+                alert('Ocurrió un error al realizar la búsqueda. Verifica la consola para más detalles.');
+            }
+        }
+
+        function irAEntrevista(idEscuela) {
+    // Redirigir a la página de escuelas con el parámetro id_escuela
+    window.location.href = `../../frontend/pages/escuela.html?id_escuela=${idEscuela}`;
+}
+
+    </script>
 </head>
 <body>
     <h1>Buscar Escuela</h1>
     <div class="button-container">
         <a href="menu_entrevistador.html">Regresar al Menú</a>
-        <a href="escuela.html">Ir a Escuela</a>
     </div>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Buscar por ID, nombre, municipio o dirección">
+        <button onclick="buscarEscuela()">Buscar</button>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Municipio</th>
+                <th>Dirección</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="resultados">
+            <tr>
+                <td colspan="5">Realiza una búsqueda para ver los resultados.</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

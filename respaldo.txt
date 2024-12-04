@@ -1,0 +1,44 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const tablaEscuelas = document.getElementById('tabla-escuelas');
+    const btnActualizar = document.getElementById('actualizar');
+
+    // Función para actualizar la tabla con los datos
+    const actualizarTabla = async () => {
+        try {
+            // Llamar a estadisticas_escuelas.php para obtener las escuelas
+            const responseEscuelas = await fetch('../../backend/estadisticas_escuelas.php');
+            if (!responseEscuelas.ok) throw new Error('Error al obtener las escuelas');
+
+            const escuelas = await responseEscuelas.json();
+
+            // Limpiar tabla
+            tablaEscuelas.innerHTML = '';
+
+            if (escuelas.length === 0) {
+                tablaEscuelas.innerHTML = '<tr><td colspan="4">No se encontraron escuelas.</td></tr>';
+                return;
+            }
+
+            // Recorrer las escuelas y llenar la tabla
+            for (const escuela of escuelas) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${escuela.id_escuela}</td>
+                    <td>${escuela.nombre}</td>
+                    <td>${escuela.municipio}</td>
+                    <td>${escuela.direccion}</td>
+                `;
+                tablaEscuelas.appendChild(row);
+            }
+        } catch (error) {
+            console.error(error);
+            alert('Ocurrió un error al obtener los datos. Verifica la consola para más detalles.');
+        }
+    };
+
+    // Evento de clic para actualizar los datos
+    btnActualizar.addEventListener('click', actualizarTabla);
+
+    // Llamar a la función de actualización al cargar la página
+    actualizarTabla();
+});

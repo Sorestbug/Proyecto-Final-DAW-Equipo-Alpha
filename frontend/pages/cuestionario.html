@@ -62,6 +62,30 @@
     </header>
     <!-- Fin Encabezado -->
 
+    <!-- Inicio Contenido Principal -->
+    <div class="container text-center my-5">
+      <h1>Estadísticas de Escuelas</h1>
+      <button id="actualizar" class="btn btn-primary mb-3">Actualizar Datos</button>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Escuela</th>
+            <th>Municipio</th>
+            <th>Dirección</th>
+            <th>Calificación Infraestructura</th>
+            <th>Calificación Rezago</th>
+            <th>Calificación Barreras</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-escuelas">
+          <tr>
+            <td colspan="7">Haz clic en "Actualizar Datos" para cargar información.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Fin Contenido Principal -->
+
     <!-- Cuestionarios -->
         <div class="container mt-5">
             <h3>Entrevista Infraestructura</h3>
@@ -81,14 +105,11 @@
             <h3 class="mt-4">Entrevista Rezago</h3>
             <ol>
             <li>¿Cuál es el nivel académico del profesor que imparte este curso?</li>
-            <li>¿En qué grado se encuentra el curso que estás impartiendo?</li>
-            <li>¿Cuál es el turno en el que se imparte este curso?</li>
             <li>¿Cuántos alumnos están matriculados en este curso?</li>
             <li>¿Qué porcentaje de los alumnos tienen habilidades de lectura adecuadas para su curso?</li>
             <li>¿Qué porcentaje de los alumnos tienen habilidades matemáticas adecuadas para su curso?</li>
             <li>¿Qué porcentaje de los alumnos tienen los conocimientos adecuados para su curso?</li>
             <li>¿Qué porcentaje de los alumnos muestran un rendimiento académico por debajo de lo esperado en este curso?</li>
-            <li>¿Cuál es el método de enseñanza principal utilizado en este curso?</li>
             <li>¿Existen recursos o materiales didácticos suficientes para apoyar el aprendizaje de los estudiantes en este curso?</li>
             </ol>
         
@@ -116,6 +137,8 @@
     </section>
     <!-- Fin de Pie de Página -->
 
+    <!-- Script externo -->
+    <script type="text/javascript" src="../js/estadisticas.js"></script>
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.js"></script>
 </body>

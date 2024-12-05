@@ -14,6 +14,23 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700|Roboto:400,700&display=swap" rel="stylesheet">
   <link href="../css/style.css" rel="stylesheet" />
   <link href="../css/responsive.css" rel="stylesheet" />
+
+    <!-- Agregar Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Agregar estilo para los gráficos -->
+    <style>
+        canvas {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -62,27 +79,29 @@
 
     <!-- Inicio Contenido Principal -->
     <div class="container text-center my-5">
-      <h1>Estadísticas de Escuelas</h1>
-      <button id="actualizar" class="btn btn-primary mb-3">Actualizar Datos</button>
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Escuela</th>
-            <th>Municipio</th>
-            <th>Dirección</th>
-            <th>Calificación Infraestructura</th>
-            <th>Calificación Rezago</th>
-            <th>Calificación Barreras</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-escuelas">
-          <tr>
-            <td colspan="7">Haz clic en "Actualizar Datos" para cargar información.</td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Gráficos de Estadísticas</h2>
+
+      <!-- Títulos y contenedores de gráficos -->
+      <h3>Infraestructura Básica de las Escuelas</h3>
+      <canvas id="graficoInfraestructura" width="400" height="200"></canvas>
+
+      <h3 class="mt-5">Barreras Económicas en las Escuelas</h3>
+      <canvas id="graficoBarrerasEconomicas" width="400" height="200"></canvas>
+
+      <h3 class="mt-5">Estado de la Infraestructura en las Escuelas</h3>
+      <canvas id="graficoInfraestructuraEstado" width="400" height="200"></canvas>
+
+      <h3 class="mt-5">Problemas de Rezago Educativo</h3>
+      <canvas id="graficoRezagoEducativo" width="400" height="200"></canvas>
+
+      <h3 class="mt-5">Distribución de Escuelas</h3>
+      <canvas id="graficoEscuelas" width="400" height="200"></canvas>
+
+      <h3 class="mt-5">Distribución de Usuarios</h3>
+      <canvas id="graficoUsuarios" width="400" height="200"></canvas>
     </div>
     <!-- Fin Contenido Principal -->
+    
 
     <!-- Inicio Pie de Página -->
     <section class="container-fluid footer_section">
@@ -90,8 +109,10 @@
     </section>
     <!-- Fin de Pie de Página -->
 
-    <!-- Script externo -->
-    <script type="text/javascript" src="../js/estadisticas.js"></script>
+    <script type="text/javascript" src="../js/graficas.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    
   </div>
 </body>
 

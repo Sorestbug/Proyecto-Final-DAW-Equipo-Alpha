@@ -43,8 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         echo "La entrevista ha sido registrada exitosamente.";
 
-    } catch (PDOException $e) {
-        echo "Error en la base de datos: " . $e->getMessage();
-    }
+        $stmt->execute();
+        header("Location: ../frontend/pages/escuela.html");
+        exit();  // Asegúrate de llamar a exit después de header para evitar que se ejecute el código restante.
+        } catch (PDOException $e) {
+            echo "Error en la base de datos: " . $e->getMessage();
+        }
 }
 ?>

@@ -3,7 +3,7 @@
 $host = 'localhost'; // Cambiar si tu base de datos está en otro servidor
 $dbname = 'usuarios_db'; // Reemplazar con el nombre de tu base de datos
 $username = 'root'; 
-$password = '12345678a';
+$password = '';
 
 try {
     // Crear una nueva conexión PDO

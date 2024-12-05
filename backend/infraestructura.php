@@ -66,9 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Ejecutar la consulta
         $stmt->execute();
-        echo "Los datos de la infraestructura se han guardado correctamente.";
-    } catch (PDOException $e) {
-        echo "Error en la base de datos: " . $e->getMessage();
-    }
+        header("Location: ../frontend/pages/escuela.html");
+        exit();  // Asegúrate de llamar a exit después de header para evitar que se ejecute el código restante.
+        } catch (PDOException $e) {
+            echo "Error en la base de datos: " . $e->getMessage();
+        }
+        
 }
 ?>

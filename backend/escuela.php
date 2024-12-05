@@ -42,9 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Ejecutar la consulta
         $stmt->execute();
-        echo "La escuela ha sido registrada correctamente.";
-    } catch (PDOException $e) {
-        echo "Error al registrar la escuela: " . $e->getMessage();
-    }
+        header("Location: ../frontend/pages/escuela.html");
+        exit();  // Asegúrate de llamar a exit después de header para evitar que se ejecute el código restante.
+        } catch (PDOException $e) {
+            echo "Error en la base de datos: " . $e->getMessage();
+        }
 }
 ?>
